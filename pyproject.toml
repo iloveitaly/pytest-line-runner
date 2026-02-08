@@ -5,13 +5,13 @@ description = ""
 keywords = []
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = ["structlog-config>=0.6.0"]
+dependencies = []
 authors = [{ name = "Michael Bianco", email = "mike@mikebian.co" }]
 urls = { "Repository" = "https://github.com/iloveitaly/pytest-line-runner" }
 
 # additional packaging information: https://packaging.python.org/en/latest/specifications/core-metadata/#license
-[project.scripts]
-pytest-line-runner = "pytest_line_runner:main"
+[project.entry-points.pytest11]
+line-runner = "pytest_line_runner"
 
 [build-system]
 requires = ["uv_build>=0.9.0,<0.10.0"]
@@ -29,13 +29,14 @@ dev = [
     "coverage>=7.0.0",
     "pytest-cov>=4.0.0",
     "covdefaults>=2.3.0",
+    "pytest-asyncio>=1.3.0",
 ]
 
 [tool.pyright]
 exclude = ["examples/", "playground/", "tmp/", ".venv/", "tests/"]
 
 [tool.pytest.ini_options]
-addopts = "--cov --cov-report=term-missing --cov-report=html:tmp/htmlcov"
+addopts = "--cov --cov-report=term-missing --cov-report=html:tmp/htmlcov -p no:pytest_line_runner"
 
 [tool.coverage.run]
 plugins = ["covdefaults"]
