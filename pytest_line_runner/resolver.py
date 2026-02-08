@@ -29,20 +29,26 @@ def _collect_test_entities(tree: ast.Module) -> list[tuple[int, str]]:
             elif isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
                 if node.name.startswith("test_"):
                     func_line = _effective_start_line(node)
-                    func_name = f"{parent_name}{node.name}" if parent_name else node.name
+                    func_name = (
+                        f"{parent_name}{node.name}" if parent_name else node.name
+                    )
                     entities.append((func_line, func_name))
 
     _walk_body(tree.body)
     return sorted(entities, key=lambda x: x[0])
 
 
-def _effective_start_line(node: ast.FunctionDef | ast.AsyncFunctionDef | ast.ClassDef) -> int:
+def _effective_start_line(
+    node: ast.FunctionDef | ast.AsyncFunctionDef | ast.ClassDef,
+) -> int:
     if node.decorator_list:
         return node.decorator_list[0].lineno
     return node.lineno
 
 
-def _find_nearest_entity(entities: list[tuple[int, str]], target_line: int) -> str | None:
+def _find_nearest_entity(
+    entities: list[tuple[int, str]], target_line: int
+) -> str | None:
     if not entities:
         return None
 
