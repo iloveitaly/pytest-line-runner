@@ -16,7 +16,7 @@ This plugin solves that by automatically resolving line numbers to the nearest t
 ## Installation
 
 ```bash
-uv add pytest-line-runner
+uv add --dev pytest-line-runner
 ```
 
 ## Usage
