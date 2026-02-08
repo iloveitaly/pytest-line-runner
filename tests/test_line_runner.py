@@ -1,5 +1,4 @@
 import ast
-from pathlib import Path
 
 from pytest_line_runner.resolver import (
     _collect_test_entities,
