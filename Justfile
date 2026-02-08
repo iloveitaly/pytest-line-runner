@@ -60,6 +60,8 @@ update_from_upstream_template:
     uv tool run --with jinja2_shell_extension \
         copier@latest update --vcs-ref=HEAD --trust --skip-tasks --skip-answered
 
+github_setup: github_repo_permissions_create github_repo_set_metadata github_ruleset_protect_master_create
+
 GITHUB_PROTECT_MASTER_RULESET := """
 {
   "name": "Protect master from force pushes",
