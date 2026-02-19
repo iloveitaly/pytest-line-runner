@@ -62,6 +62,14 @@ pytest tests/test_example.py:9   # Runs TestCalculator::test_multiply
 - Uses AST parsing for accurate test resolution
 - Automatically falls back to pytest's default behavior if the file doesn't exist or no test is found
 
+## Related Projects
+
+- [pytest-playwright-visual-snapshot](https://github.com/iloveitaly/pytest-playwright-visual-snapshot): Easy pytest visual regression testing using playwright
+- [pytest-playwright-artifacts](https://github.com/iloveitaly/pytest-playwright-artifacts): Pytest plugin that captures HTML, screenshots, and console logs on Playwright test failures
+- [pytest-celery-utils](https://github.com/iloveitaly/pytest-celery-utils): Pytest plugin for inspecting Celery task queues in Redis during tests
+- [pytest-plugin-utils](https://github.com/iloveitaly/pytest-plugin-utils): Reusable configuration and artifact utilities for building pytest plugins
+- [beautiful-traceback](https://github.com/iloveitaly/beautiful-traceback): Beautiful, readable Python tracebacks with colors and formatting
+
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
