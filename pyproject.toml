@@ -1,6 +1,6 @@
 [project]
 name = "pytest-line-runner"
-version = "0.1.0"
+version = "0.1.1"
 description = "Run pytest tests by line number instead of exact test name"
 keywords = ["pytest", "testing", "line-number", "plugin"]
 readme = "README.md"
